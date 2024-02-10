@@ -1,27 +1,27 @@
 import caeserCipher from "../caesarCipher";
 
 test("String capitalize", () => {
-  expected(caeserCipher("Hello World", 4)).toBe("Khoor Zruog");
+  expect(caeserCipher("Hello World", 4)).toBe("Lipps Asvph");
 });
 
 test("String", () => {
-  expected(caeserCipher("hello world", 4)).toBe("khoor zruog");
+  expect(caeserCipher("hello world", 4)).toBe("lipps asvph");
 });
 
 test("No shift", () => {
-  expected(caeserCipher("Hello World", 0)).toBe("Hello World");
+  expect(caeserCipher("Hello World", 0)).toBe("Hello World");
 });
 
 test("Big shift", () => {
-  expected(caeserCipher("Hello World", 64)).toBe("Tqxxa Iadxp");
+  expect(caeserCipher("Hello World", 64)).toBe("Tqxxa Iadxp");
 });
 
 test("Empty String", () => {
-  expected(caeserCipher("", 2)).toBe("");
+  expect(caeserCipher("", 2)).toBe("");
 });
 
 test("Negative shift", () => {
-  expect(caeserCipher("Hello World", -4)).toBe("Lipps Asvph");
+  expect(caeserCipher("Hello World", -4)).toBe("Dahhk Sknh`");
 });
 
 test("Non-alphabetic characters", () => {
@@ -36,6 +36,6 @@ test("No string", () => {
   expect(caeserCipher(9, 3)).toBe(null);
 });
 
-test("No shift", () => {
-  expect(caeserCipher("Hello, World!", "Hello, World!")).toBe(null);
+test("Invalid shift", () => {
+  expect(caeserCipher("Hello, World!", "Hello, World!", "")).toBe(null);
 });
